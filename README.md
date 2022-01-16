@@ -265,7 +265,7 @@ for /r C:\folder %%f in (*.txt) do (
 
 cd C:\folder
 
-for /d %%f in (*f *n) do (
+for /d %%f in (f* n*) do (
   echo %%f
 )
 ```
