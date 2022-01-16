@@ -121,6 +121,8 @@ echo %input%
 Вывод:
 > Don't worry, smile!
 
+![example](https://github.com/Fsoky/batch-script/blob/main/images/Screenshot_1.png)
+
 Такая переменная может принимать в себя данные, которые вы передадите. \
 Имеется еще один интересный вид переменной, она называется *переменной аргумента*. \
 Обозначается она таким образом: `%1 %2 %3...`
@@ -133,6 +135,8 @@ echo %1
 
 Вывод:
 > Something
+
+![example](https://github.com/Fsoky/batch-script/blob/main/images/Screenshot_2.png)
 
 Когда мы запускаем наш `bat-файл` из консоли, мы можем передать любой аргумент после его названия: `script Something`. \
 *script* - название нашего файла, *Something* - наш желаемый аргумент. Если мы попытаемся передать несколько слов (аргументов) через пробел, то у нас засчитает только первое слово. То есть каждое *новое слово* по сути является *новым аргументом*.
@@ -188,6 +192,8 @@ echo %value%
 Вывод:
 > 24
 
+![example](https://github.com/Fsoky/batch-script/blob/main/images/Screenshot_3.png)
+
 ### Локальные переменные
 Локальные переменные задаются в блоке от `setLocal` до `endLocal`. Такими переменными нельзя воспользоваться за пределами блока, и также они недоступны в сессии, как глобальные.
 ```bat
@@ -231,7 +237,7 @@ for %%i in (C:\folder\fantasy.txt C:\folder\myths.txt) do (
   copy %%i C:\Users\user\Desktop
 )
 ```
-![Example cycle for](https://github.com/Fsoky/batch-script/main/images/cycle_for.png)
+![example](https://github.com/Fsoky/batch-script/blob/main/images/Screenshot_4.png)
 Разберем начало цикла, цикл создается с *ключевого слова* `for`, следующим можно указать *вид* цикла `/r`, `/d`, `/f`, `/l` (необязательно). Вид цикла используется в разных ситуациях, в которых вы хотите его применить. Дальше в этом разберемся. \
 Переменная в цикле начинается с двух символов `%%`, а после записывается само название (**названием переменной должен служить 1 единственный символ**). \
 
@@ -248,7 +254,7 @@ for /r C:\folder %%f in (*.txt) do (
   echo %%f
 )
 ```
-![Example cycle for /r](https://github.com/Fsoky/batch-script/main/images/cycle_for_r.png)
+![example](https://github.com/Fsoky/batch-script/blob/main/images/Screenshot_5.png)
 Здесь мы уже указываем команду `/r`, следующим можно передать папку, которая будет считаться корневой, если не передавать директорию (*C:\folder*) - текущая директория будет считаться корневой. Также поиск файлов будет осуществляться и в подпапках. \
 `%%f` - является переменной. В скобках `( )`, можно передать файлы, по которым будет осуществляться поиск. Их может быть несколько `(*.txt *.py *.bat)` или можно записать `.`, она будет искать все файлы в целом (в подпапках тоже). 
 
@@ -263,7 +269,7 @@ for /d %%f in (*f *n) do (
   echo %%f
 )
 ```
-![Example cycle for /r](https://github.com/Fsoky/batch-script/main/images/cycle_for_d.png)
+![example](https://github.com/Fsoky/batch-script/blob/main/images/Screenshot_6.png)
 В данном примере мы получим список папок в директории *C:\folder*, которые начинаются с букв `f` и `n`. Если передать `*`, мы получим список всех папок находящихся в директории.
 
 ## Цикл for /l
@@ -275,7 +281,7 @@ for /l %%i in (1, 1, 10) do (
   echo %%i
 )
 ```
-![Example cycle for /r](https://github.com/Fsoky/batch-script/main/images/cycle_for_l.png)
+![example](https://github.com/Fsoky/batch-script/blob/main/images/Screenshot_7.png)
 В этом примере мы выведим цифры от *1* до *10*. \
 ```bat
 for /l %%i in (start, step, end) do (
